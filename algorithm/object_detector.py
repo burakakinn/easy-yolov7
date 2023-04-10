@@ -82,7 +82,7 @@ class YOLOv7:
 
             if track:
                 raw_detection = self.tracker.update(raw_detection)
-            
+
             detections = Detections(raw_detection, self.classes, tracking=track).to_dict()
 
             if len(self.settings['ocr_classes']) > 0 and self.text_recognizer is not None:
